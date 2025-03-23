@@ -1,0 +1,13 @@
+src/
+├── shared/                  # קוד משותף (Entities)
+│   ├── Player.ts            # Entity עבור שחקן
+│   └── User.ts              # Entity עבור משתמש (אימות)
+├── server/                  # קוד שרת
+│   ├── api.ts               # הגדרת ה-API עם Remult
+│   └── index.ts             # הרצת השרת
+├── frontend/                # קוד צד לקוח (React)
+│   ├── App.tsx              # קובץ ראשי של האפליקציה
+│   ├── Login.tsx            # דף התחברות
+│   ├── Home.tsx             # דף הבית (לאחר התחברות)
+│   └── theme.ts             # עיצוב כללי עם Material-UI
+└── index.tsx                # נקודת הכניסה של האפליקציה

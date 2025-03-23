@@ -1,0 +1,13 @@
+[
+  {
+    "id": "j7n2ivg1c70iecx9dlpc2ie4",
+    "name": "test",
+    "money": 200,
+    "storage": {
+      "wood": 0,
+      "gold": 0,
+      "diamond": 0
+    },
+    "createdAt": "2025-03-23T10:47:41.814Z"
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "dixr9g385lnmcoc9ag2tivdo",
+    "name": "Jerusalem",
+    "location": {
+      "x": 31.7683,
+      "y": 35.2137
+    },
+    "prices": {
+      "wood": 10,
+      "gold": 50,
+      "diamond": 100
+    },
+    "createdAt": "2025-03-23T16:04:15.974Z"
+  }
+]
