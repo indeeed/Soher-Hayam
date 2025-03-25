@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Login } from './Login'
 import { Home } from './Home'
 import { Player } from './shared/Player'
@@ -8,12 +8,12 @@ export const App = () => {
   const [player, setPlayer] = useState<Player | null>(null)
 
   return (
-    <Container maxWidth="sm">
+    <Container >
       <Box sx={{ marginTop: 4 }}>
         {!player ? (
           <Login onLogin={(player) => setPlayer(player)} />
         ) : (
-          <Home player={player} />
+          <Home player={player} onPlayerUpdate={setPlayer} />
         )}
       </Box>
     </Container>

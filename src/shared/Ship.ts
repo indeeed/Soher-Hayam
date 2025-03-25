@@ -20,6 +20,4 @@ export class Ship {
   @Fields.object()
   owner?: Player // בעל הספינה
 
-  @Fields.createdAt()
-  createdAt?: Date
 }

@@ -16,8 +16,6 @@ export class Country {
   @Fields.object()
   prices: Prices = { wood: 10, gold: 50, diamond: 100 } // מחירי החפצים בארץ זו
 
-  @Fields.createdAt()
-  createdAt?: Date
 }
 
 // מיקום (Location)

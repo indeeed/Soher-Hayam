@@ -3,14 +3,39 @@
     "id": "dixr9g385lnmcoc9ag2tivdo",
     "name": "Jerusalem",
     "location": {
-      "x": 31.7683,
-      "y": 35.2137
+      "x": 46,
+      "y": 37
+    },
+    "prices": {
+      "wood": 20,
+      "gold": 40,
+      "diamond": 100
+    }
+  },
+  {
+    "id": "dixr9g385lnmcoc9ag2tivdo",
+    "name": "Tel Aviv",
+    "location": {
+      "x": 25,
+      "y": 32
+    },
+    "prices": {
+      "wood": 15,
+      "gold": 50,
+      "diamond": 150
+    }
+  },
+  {
+    "id": "dixr9g385lnmcoc9ag2tivdo",
+    "name": "Haifa",
+    "location": {
+      "x": 35,
+      "y": 13
     },
     "prices": {
       "wood": 10,
-      "gold": 50,
-      "diamond": 100
-    },
-    "createdAt": "2025-03-23T16:04:15.974Z"
+      "gold": 70,
+      "diamond": 120
+    }
   }
 ]
