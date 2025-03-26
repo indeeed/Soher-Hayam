@@ -2,31 +2,7 @@
   {
     "id": "j7n2ivg1c70iecx9dlpc2ie4",
     "name": "test",
-    "money": 1360,
-    "storage": {
-      "wood": 0,
-      "gold": 0,
-      "diamond": 0
-    },
-    "createdAt": "2025-03-23T10:47:41.814Z",
-    "location": {
-      "id": "dixr9g385lnmcoc9ag2tivdo",
-      "name": "Haifa",
-      "location": {
-        "x": 35,
-        "y": 13
-      },
-      "prices": {
-        "wood": 10,
-        "gold": 70,
-        "diamond": 120
-      }
-    }
-  },
-  {
-    "id": "j7n2ivg1c7646x9dlpc2ie4",
-    "name": "test01",
-    "money": 200,
+    "money": 2110,
     "storage": {
       "wood": 0,
       "gold": 0,
@@ -44,6 +20,30 @@
         "wood": 20,
         "gold": 40,
         "diamond": 100
+      }
+    }
+  },
+  {
+    "id": "j7n2ivg1c7646x9dlpc2ie4",
+    "name": "test01",
+    "money": 200,
+    "storage": {
+      "wood": 0,
+      "gold": 0,
+      "diamond": 0
+    },
+    "createdAt": "2025-03-23T10:47:41.814Z",
+    "location": {
+      "id": "dixr9g385lnmcoc9ag2tivdo",
+      "name": "Tel Aviv",
+      "location": {
+        "x": 25,
+        "y": 32
+      },
+      "prices": {
+        "wood": 15,
+        "gold": 50,
+        "diamond": 150
       }
     }
   }

@@ -3,10 +3,11 @@ import { remult } from 'remult';
 import { Player } from './shared/Player';
 import { Country } from './shared/Country';
 import { TradeComponent } from './TradeComponent';
+import LogoutIcon from '@mui/icons-material/Logout';
 import { 
   Box, Typography, Paper, Container, 
   Grid, Stack, Avatar, useMediaQuery, 
-  useTheme, Divider
+  useTheme, Divider, Button
 } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
@@ -30,13 +31,13 @@ const RESOURCE_ICONS = {
 };
 
 interface HomeProps {
-  player: Player;
-  onPlayerUpdate: (player: Player) => void;
-}
-
+    player: Player;
+    onPlayerUpdate: (player: Player) => void;
+    onLogout: () => void;
+  }
 const Countrys = remult.repo(Country);
 
-export const Home = ({ player, onPlayerUpdate }: HomeProps) => {
+export const Home = ({ player, onPlayerUpdate, onLogout }: HomeProps) => {
   const [cities, setCities] = useState<Country[]>([]);
   const [isTraveling, setIsTraveling] = useState(false);
   const theme = useTheme();
@@ -69,34 +70,43 @@ export const Home = ({ player, onPlayerUpdate }: HomeProps) => {
     <Container maxWidth="lg" sx={{ py: 2 }}>
       {/* Player Stats Section - Redesigned */}
       <Paper elevation={3} sx={{ 
-        p: isMobile ? 1 : 3, 
+        p: 2,
         mb: 3,
         borderRadius: 2,
         background: 'linear-gradient(to right, #f5f5f5, #e0e0e0)'
       }}>
+        
         <Grid container spacing={2} alignItems="center">
           {/* Player Avatar and Basic Info */}
           <Grid item xs={12} md={3}>
             <Stack direction="row" alignItems="center" spacing={2}>
-              <Avatar
-               src={character}
-               sx={{ 
-                width: isMobile ? 56 : 64, 
-                height: isMobile ? 56 : 64,
-                bgcolor: 'primary.main',
-                fontSize: isMobile ? '1.5rem' : '2rem'
-                
-              }}>
+                <Avatar
+                src={character}
+                sx={{ 
+                    width: isMobile ? 56 : 64, 
+                    height: isMobile ? 56 : 64,
+                    bgcolor: 'primary.main',
+                    fontSize: isMobile ? '1.5rem' : '2rem'
+                }}>
                 {player.name.charAt(0).toUpperCase()}
-              </Avatar>
-              <Box>
+                </Avatar>
+                <Box>
                 <Typography variant="h6" fontWeight="bold">{player.name}</Typography>
                 <Typography variant="body2" color="text.secondary">
-                  Merchant Level: 1
+                    Merchant Level: 1
                 </Typography>
-              </Box>
+                <Button 
+                    variant="outlined" 
+                    size="small" 
+                    startIcon={<LogoutIcon />}
+                    onClick={onLogout}
+                    sx={{ mt: 1 }}
+                >
+                    Logout
+                </Button>
+                </Box>
             </Stack>
-          </Grid>
+        </Grid>
 
           <Divider orientation="vertical" flexItem sx={{ display: { xs: 'none', md: 'block' } }} />
 
@@ -177,7 +187,7 @@ export const Home = ({ player, onPlayerUpdate }: HomeProps) => {
           p: 2, 
           borderRadius: 2,
           flex: isMobile ? 'none' : 0.2,
-          width: isMobile ? '100%' : 'auto',
+          width: 'auto',
         }}>
           <Typography variant="h6" gutterBottom sx={{ display: 'flex', alignItems: 'center' }}>
             <TravelExploreIcon sx={{ mr: 1 }} /> Travel Map
@@ -185,9 +195,10 @@ export const Home = ({ player, onPlayerUpdate }: HomeProps) => {
           
           <Box sx={{
             margin: "auto",
-            position: 'relative', 
-            height: isMobile ? 250 : 370,
-            width: '100%',
+            position: 'relative',
+            minWidth: 190,
+            height: isMobile ? 420 : 390,
+            width: '45%',
             backgroundImage: `url(${israelMap})`,
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
@@ -241,7 +252,7 @@ export const Home = ({ player, onPlayerUpdate }: HomeProps) => {
               p: 2, 
               borderRadius: 2,
               flex: isMobile ? 'none' : 0.4,
-              width: isMobile ? '100%' : 'auto'
+              width: 'auto',
           }}>
               <TradeComponent
                   player={player}
@@ -256,11 +267,11 @@ export const Home = ({ player, onPlayerUpdate }: HomeProps) => {
           p: 2, 
           borderRadius: 2,
           flex: isMobile ? 'none' : 0.4,
-          width: isMobile ? '100%' : 'auto'
+          width: 'auto',
         }}>
           <Typography variant="h6" gutterBottom>Market Prices</Typography>
           <Box sx={{ 
-            maxHeight: isMobile ? 300 : 420,
+            maxHeight: isMobile ? 400 : 420,
             overflowY: 'auto',
             pr: 1
           }}>
